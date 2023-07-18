@@ -36,6 +36,78 @@ class _HomeScreenState extends State<HomeScreen> {
                     _current = index;
                   });
                 },
+              ),
+              const SizedBox(height: kPadding24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: kPadding20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Near for you',
+                      style: kRalewayMedium.copyWith(
+                        color: kBlack,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                      ),
+                    ),
+                    Text(
+                      'See more',
+                      style: kRalewayRegular.copyWith(
+                        color: kGrey85,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: kPadding24),
+              SizedBox(
+                width: double.infinity,
+                height: 272,
+                child: ListView.builder(
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 272,
+                      width: 222,
+                      padding: EdgeInsets.only(
+                        left: kPadding20,
+                        right: index == (5 - 1) ? kPadding20 : 0,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(kBorderRadius20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: kBlack.withOpacity(0.1),
+                            spreadRadius: 0,
+                            blurRadius: 18,
+                            offset: const Offset(0, 18),
+                          )
+                        ],
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(buildingImage),
+                        ),
+                      ),
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(kBorderRadius20),
+                                  bottomRight: Radius.circular(kBorderRadius20),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),
