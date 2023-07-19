@@ -5,4 +5,5 @@ class ImageUtils {
   static const icNotification = '${_baseUrl}icon_notification_has_notif.svg';
   static const icSearch = '${_baseUrl}icon_search.svg';
   static const icFilter = '${_baseUrl}icon_filter.svg';
+  static const icPinPoint = '${_baseUrl}icon_pinpoint.svg';
 }
