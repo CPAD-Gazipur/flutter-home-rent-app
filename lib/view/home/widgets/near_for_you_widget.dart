@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_rent_app/core/data/app_data.dart';
+import 'package:flutter_home_rent_app/core/shared/header_title_widget.dart';
 import 'package:flutter_home_rent_app/core/utils/app_styles.dart';
 import 'package:flutter_home_rent_app/core/utils/image_utils.dart';
 import 'package:flutter_home_rent_app/core/utils/size_config.dart';
@@ -18,29 +19,11 @@ class NearForYouWidget extends StatelessWidget {
 
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kPadding20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Near for you',
-                style: kRalewayMedium.copyWith(
-                  color: kBlack,
-                  fontSize: SizeConfig.blockSizeHorizontal! * 4,
-                ),
-              ),
-              Text(
-                'See more',
-                style: kRalewayRegular.copyWith(
-                  color: kGrey85,
-                  fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
-                ),
-              ),
-            ],
-          ),
+        HeaderTitleWidget(
+          title: 'Near for you',
+          onSeeMorePressed: () {},
         ),
-        const SizedBox(height: kPadding24),
+        const SizedBox(height: kPadding4),
         SizedBox(
           width: double.infinity,
           height: 272,

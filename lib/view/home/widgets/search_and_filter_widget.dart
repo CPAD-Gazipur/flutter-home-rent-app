@@ -27,9 +27,11 @@ class SearchAndFilterWidget extends StatelessWidget {
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: kPadding16,
                 ),
-                prefixIcon: SvgPicture.asset(
-                  ImageUtils.icSearch,
-                  fit: BoxFit.none,
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(kPadding8),
+                  child: SvgPicture.asset(
+                    ImageUtils.icSearch,
+                  ),
                 ),
                 hintText: 'Search address or near you',
                 border: kInputBorder,
