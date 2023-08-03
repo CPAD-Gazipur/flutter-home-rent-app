@@ -6,4 +6,6 @@ class ImageUtils {
   static const icSearch = '${_baseUrl}icon_search.svg';
   static const icFilter = '${_baseUrl}icon_filter.svg';
   static const icPinPoint = '${_baseUrl}icon_pinpoint.svg';
+  static const icBedRoom = '${_baseUrl}icon_bedroom.svg';
+  static const icBathRoom = '${_baseUrl}icon_bathroom.svg';
 }

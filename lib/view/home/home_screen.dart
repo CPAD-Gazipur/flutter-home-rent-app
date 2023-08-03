@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_home_rent_app/core/data/app_data.dart';
-import 'package:flutter_home_rent_app/core/shared/header_title_widget.dart';
 import 'package:flutter_home_rent_app/core/utils/app_styles.dart';
-import 'package:flutter_home_rent_app/core/utils/image_utils.dart';
 import 'package:flutter_home_rent_app/core/utils/size_config.dart';
+import 'package:flutter_home_rent_app/view/home/widgets/best_for_you_widget.dart';
 import 'package:flutter_home_rent_app/view/home/widgets/home_app_bar_widget.dart';
 import 'package:flutter_home_rent_app/view/home/widgets/home_categories_widget.dart';
 import 'package:flutter_home_rent_app/view/home/widgets/near_for_you_widget.dart';
@@ -42,76 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: kPadding24),
               const NearForYouWidget(),
               const SizedBox(height: kPadding8),
-              HeaderTitleWidget(
-                title: 'Best for you',
-                onSeeMorePressed: () {},
-              ),
-              const SizedBox(height: kPadding24),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kPadding20),
-                child: ListView.builder(
-                  //scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: 10,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 70,
-                      margin: const EdgeInsets.only(bottom: kPadding24),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 70,
-                            width: 70,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  kBorderRadius10,
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: kBlack.withOpacity(0.1),
-                                    blurRadius: 18,
-                                    spreadRadius: 0,
-                                    offset: const Offset(0, 18),
-                                  )
-                                ],
-                                image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage(buildingImage),
-                                )),
-                          ),
-                          SizedBox(
-                            width: SizeConfig.blockSizeHorizontal! * 4.5,
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Orchad House',
-                                  style: kRalewayMedium.copyWith(
-                                    color: kBlack,
-                                    fontSize:
-                                        SizeConfig.blockSizeHorizontal! * 4,
-                                  ),
-                                ),
-                                Text(
-                                  'Tk. 2.500.000.000 / Year',
-                                  style: kRalewayMedium.copyWith(
-                                    color: kBlack,
-                                    fontSize:
-                                        SizeConfig.blockSizeHorizontal! * 4,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              )
+              const BestForYouWidget(),
             ],
           ),
         ),
